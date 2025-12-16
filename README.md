@@ -79,8 +79,10 @@
       <ul>
         <li><a href="#pr">4.2. Pull Request (PR) Workflow</a></li>
       </ul>
+      <ul>
+        <li><a href="#top-contributors">Top contributors</a></li>
+      </ul>
     </li>
-    <li><a href="#top-contributors">Top contributors</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ol>
@@ -234,7 +236,7 @@ We will use the commit standard **Type(area): Brief description**.
 <!-- CONTACT -->
 <a id="contact"></a>
 
-## Contact
+## 5. Contact
 
 Your Name - javier.espada@qaracter.com
 
@@ -247,7 +249,7 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 <!-- ROADMAP -->
 <a id="roadmap"></a>
 
-## Roadmap
+## 6. Roadmap
 
 - [ ] Full Model Build
 - [ ] View Build
