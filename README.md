@@ -123,6 +123,13 @@ The design adheres strictly to the **Model-View-Controller (MVC)** pattern to en
 
 The system is logically divided into three primary layers: Model, View, and Exceptions.
 
+<details>
+  <summary>Click to expand the UML Class Diagram</summary>
+  <p>
+    <br />
+    <img src="assets/uml.png" alt="UML Class Diagram" width="1000">
+  </p>
+</details>
 
 <a id="package-structure"></a>
 
