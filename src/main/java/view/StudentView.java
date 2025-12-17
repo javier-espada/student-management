@@ -20,7 +20,7 @@ public class StudentView {
         this.sm = sm;
     }
 
-    void run() {
+    public void run() {
         int option = 0;
 
         System.out.println("Welcome to the student management system.");
