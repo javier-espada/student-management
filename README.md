@@ -263,7 +263,7 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 ### Day 1
 - [ ] Documentation Updates
     - [ ] README.md Updates
-- [ ] Full Model Build.
+- [x] Full Model Build.
     - [x] Create IStudent interface.
     - [x] Create IStudentManager interface.
     - [x] Create Student class with attributes and constructor.
