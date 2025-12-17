@@ -183,7 +183,7 @@ src/
 | :--- | :--- | :--- | :--- |
 | **<a href="https://github.com/guzmangriancho">Guzmán</a>** | Group Leader / Developer | `StudentManager.java` (Implementation of all management logic, search, exceptions). | **Model Controller / Group 1 Integrator.** |
 | **<a href="https://github.com/RecepBorekciQaracter">Recep</a>** | Developer | `Student.java` (Implementation of `IStudent`), `IStudent.java` (Definition of the interface). | **Data Object / Contract Definition.** |
-| **<a href="https://github.com/javier-espada">Javier</a>** | Pull Request Reviewer | Ensure Group 1's code meets standards. | **Quality Assurance (QA).** |
+| **<a href="https://github.com/javier-espada">Javier</a>** | Pull Request Reviewer / Architect| Ensure Group 1's code meets standards. | **Quality Assurance (QA).** |
 
 <a id="group-2"></a>
 
