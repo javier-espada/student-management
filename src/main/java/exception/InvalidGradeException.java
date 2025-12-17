@@ -6,7 +6,7 @@ public class InvalidGradeException extends StudentException{
         super();
     }
 
-    public InvalidGradeException(double grade){
-        super(String.valueOf(grade));
+    public InvalidGradeException(String message){
+        super(message);
     }
 }
