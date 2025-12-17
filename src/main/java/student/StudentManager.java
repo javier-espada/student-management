@@ -51,9 +51,14 @@ public class StudentManager implements IStudentManager {
         Map<String, Double> highP = new HashMap<>();;
         for(String studentName : studentsList.keySet()) {
             IStudent student = studentsList.get(studentName);
-            double avg = student.calculateAverage();
-            if(avg >= minGrades) {
-                highP.put(studentName, avg);
+            try {
+                double avg = student.calculateAverage();
+
+                if (avg >= minGrades) {
+                    highP.put(studentName, avg);
+                }
+            } catch (NoGradesException e) {
+                continue;
             }
         }
         return highP;
