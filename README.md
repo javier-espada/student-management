@@ -171,9 +171,9 @@ src/
 
 | Member | Project Role | Main Task | Focus |
 | :--- | :--- | :--- | :--- |
-| **Guzmán** | Group Leader / Developer | `StudentManager.java` (Implementation of all management logic, search, exceptions). | **Model Controller / Group 1 Integrator.** |
-| **Recep** | Developer | `Student.java` (Implementation of `IStudent`), `IStudent.java` (Definition of the interface). | **Data Object / Contract Definition.** |
-| **Javier** | Pull Request Reviewer | Ensure Group 1's code meets standards. | **Quality Assurance (QA).** |
+| **<a href="https://github.com/guzmangriancho">Guzmán</a>** | Group Leader / Developer | `StudentManager.java` (Implementation of all management logic, search, exceptions). | **Model Controller / Group 1 Integrator.** |
+| **<a href="https://github.com/RecepBorekciQaracter">Recep</a>** | Developer | `Student.java` (Implementation of `IStudent`), `IStudent.java` (Definition of the interface). | **Data Object / Contract Definition.** |
+| **<a href="https://github.com/javier-espada">Javier</a>** | Pull Request Reviewer | Ensure Group 1's code meets standards. | **Quality Assurance (QA).** |
 
 <a id="group-2"></a>
 
@@ -181,9 +181,9 @@ src/
 
 | Member | Project Role | Main Task | Focus |
 | :--- | :--- | :--- | :--- |
-| **Miguel** | Group Leader / Developer | `Main.java` (MVC Config). `StudentView.run()`. PR Reviewer. Basic JUnit Tests. | **Structure/Integration and QA.** |
-| **Carlos** | Developer | `StudentView` (Implementation of CRUD handlers, `try-catch` handling for all exceptions). Exception JUnit Tests. | **Interface and Robustness.** |
-| **David** | Developer | `getHighPerformingStudents` (in `StudentManager`). Handler for this query in `StudentView`. Functional JUnit Tests. | **Advanced Query Logic and QA.** |
+| **<a href="https://github.com/Miguel901288">Miguel</a>** | Group Leader / Developer | `Main.java` (MVC Config). `StudentView.run()`. PR Reviewer. Basic JUnit Tests. | **Structure/Integration and QA.** |
+| **<a href="https://github.com/CarlosQaracter">Carlos</a>** | Developer | `StudentView` (Implementation of CRUD handlers, `try-catch` handling for all exceptions). Exception JUnit Tests. | **Interface and Robustness.** |
+| **<a href="https://github.com/Davidsar11">David</a>** | Developer | `getHighPerformingStudents` (in `StudentManager`). Handler for this query in `StudentView`. Functional JUnit Tests. | **Advanced Query Logic and QA.** |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
