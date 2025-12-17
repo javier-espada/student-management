@@ -263,7 +263,7 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 ### Day 1
 - [ ] Documentation Updates
     - [ ] README.md Updates
-- [ ] Full Model Build.
+- [x] Full Model Build.
     - [x] Create IStudent interface.
     - [x] Create IStudentManager interface.
     - [x] Create Student class with attributes and constructor.
@@ -273,16 +273,20 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
     - [x] Create the 4 custom exception classes.
 
 ### Day 2
-- [ ] Final model functionalities
-    - [ ] Implement getHighPerformingStudents logic by threshold.
-- [ ] View Creation
-    - [ ] Create StudentView class with the menu and Scanner to read data.
+- [x] Final model functionalities
+    - [x] Implement getHighPerformingStudents logic by threshold.
+- [x] View Creation
+    - [x] Create StudentView class with the menu and Scanner to read data.
 - [ ] Main creation
     - [ ] Create Main class to start the program using try-catch blocks to handle expected exceptions.
 - [ ] Testing.
     - [ ] Create and execute basic JUnit tests.
 - [ ] Final integration
     - [ ] Perform a final integration session to connect Group 1's StudentManager with Group 2's StudentView and verify that the entire data flow works correctly.
+
+### Future Implementations
+- [ ] Use Jacoco to check coverage.
+- [ ] Implement local database with a simple text/json file.
 
 See the [open issues](https://github.com/javier-espada/student-management/issues) for a full list of proposed features (and known issues).
 
