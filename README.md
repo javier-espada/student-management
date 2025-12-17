@@ -222,8 +222,6 @@ We will use the commit standard **Type(area): Brief description**.
     * **Guzmán** (Leader) has the authority to approve and merge all PRs.
 5.  **Review and Merge:** The reviewer reviews the code. If approved, the PR is merged into `main`.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <a id="top-contributors"></a>
 
 ### Top contributors:
@@ -231,6 +229,8 @@ We will use the commit standard **Type(area): Brief description**.
 <a href="https://github.com/javier-espada/student-management/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=javier-espada/student-management" alt="contrib.rocks image" />
 </a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- CONTACT -->
