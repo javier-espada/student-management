@@ -6,7 +6,7 @@ import java.util.Map;
 
 public interface IStudentManager {
 
-    void addStudent(String name, List<Double> grades) throws DuplicateStudentException;
+    void addStudent(String name) throws DuplicateStudentException;
 
     void recordGrade(String studentName, double grade) throws StudentNotFoundException, InvalidGradeException;
 
