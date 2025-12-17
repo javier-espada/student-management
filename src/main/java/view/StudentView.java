@@ -6,6 +6,7 @@ import exception.NoGradesException;
 import exception.StudentNotFoundException;
 import student.StudentManager;
 
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -14,14 +15,13 @@ public class StudentView {
     Scanner sc;
     StudentManager sm;
 
-    StudentView(StudentManager sm) {
+    public StudentView(StudentManager sm) {
         sc = new Scanner(System.in);
         this.sm = sm;
     }
 
     void run() {
         int option = 0;
-        boolean read = false;
 
         System.out.println("Welcome to the student management system.");
 
@@ -33,18 +33,7 @@ public class StudentView {
             System.out.println("4. Get high performing students.\n");
             System.out.println("5. Exit the system.");
 
-            read = false;
-            do {
-                System.out.println("Introduce a number: ");
-                if (sc.hasNextInt()) {
-                    option = sc.nextInt();
-                    sc.nextLine();
-                    read = true;
-                } else {
-                    System.out.println("Error input at Scanner.");
-                    sc.nextLine();
-                }
-            } while (!read);
+            option = readInt();
 
             if(option < 1 || option > 7) {
                 handleMenuInput(option);
@@ -87,10 +76,11 @@ public class StudentView {
                 System.out.println("Enter the student's name to add a grade:");
                 String addName = sc.nextLine();
                 System.out.println("Enter the grade (0.0-10.0):");
-                double grade = sc.nextDouble();
+                double grade = readDouble();
 
                 try {
                     sm.recordGrade(addName, grade);
+                    System.out.println("Grade of " + grade + " added to the student " + addName + ".");
                 } catch (StudentNotFoundException e) {
                     System.out.println("The student with name: " + addName + ", is not registered in the system.");
                 } catch (InvalidGradeException e) {
@@ -98,12 +88,11 @@ public class StudentView {
                     System.out.println("A grade must be a double between 0 and 10.");
                 }
 
-                System.out.println("Grade of " + grade + " added to the student " + addName + ".");
                 break;
 
             case(4): // Get highPerformingStudent
                 System.out.println("Enter minimum average grade students to display:");
-                double minGrade = sc.nextDouble();
+                double minGrade = readDouble();
 
                 Map<String, Double> map = sm.getHighPerformingStudents(minGrade);
                 System.out.println("High performing students with an average over " + minGrade + ":");
@@ -118,5 +107,37 @@ public class StudentView {
                 System.out.println("Please, enter a valid input option (1-7).");
                 break;
         }
+    }
+
+    int readInt() {
+        boolean done = false;
+        int option = 0;
+
+        do {
+            try {
+                option = sc.nextInt();
+                done = true;
+            } catch (InputMismatchException e) {
+                System.out.println("To choose an option you must enter an integer.");
+            }
+        } while(!done);
+
+        return option;
+    }
+
+    double readDouble() {
+        boolean done = false;
+        double grade = -1;
+
+        do {
+            try {
+                grade = sc.nextDouble();
+                done = true;
+            } catch (InputMismatchException e) {
+                System.out.println("For the grade you must enter a double.");
+            }
+        } while(!done);
+
+        return grade;
     }
 }
