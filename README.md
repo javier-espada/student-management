@@ -250,11 +250,28 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 <a id="roadmap"></a>
 
 ## 6. Roadmap
+### Day 1
+- [ ] Documentation Updates
+    - [ ] README.md Updates
+- [ ] Full Model Build.
+    - [ ] Create IStudent interface.
+    - [ ] Create Student class with attributes and constructor.
+    - [ ] Create StudentManager class with the students HashMap
+    - [ ] Implement addStudent, recordGrade, and calculateAverage methods.
+- [ ] Manage exceptions.
+    - [ ] Create the 3 custom exception classes.
 
-- [ ] Full Model Build
-- [ ] View Build
-- [ ] Testing
-    - [ ] Create custom exceptions
+### Day 2
+- [ ] Final model functionalities
+    - [ ] Implement getHighPerformingStudents logic by threshold.
+- [ ] View Creation
+    - [ ] Create StudentView class with the menu and Scanner to read data.
+- [ ] Main creation
+    - [ ] Create Main class to start the program using try-catch blocks to handle expected exceptions.
+- [ ] Testing.
+    - [ ] Create and execute basic JUnit tests.
+- [ ] Final integration
+    - [ ] Perform a final integration session to connect Group 1's StudentManager with Group 2's StudentView and verify that the entire data flow works correctly.
 
 See the [open issues](https://github.com/javier-espada/student-management/issues) for a full list of proposed features (and known issues).
 
