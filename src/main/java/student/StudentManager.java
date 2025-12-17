@@ -1,4 +1,52 @@
 package student;
 
-public class StudentManager {
+import exception.*;
+import java.util.HashMap;
+import java.util.Map;
+
+public class StudentManager implements IStudentManager {
+
+    private final Map<String, IStudent> studentsList;
+
+    public StudentManager() {
+        this.studentsList = new HashMap<>();
+    }
+
+    @Override
+    public void addStudent(String name) throws DuplicateStudentException {
+        if (studentsList.containsKey(name)) {
+            throw new DuplicateStudentException(name);
+        }
+        studentsList.put(name, new Student(name));
+    }
+
+    @Override
+    public void recordGrade(String studentName, double grade) throws StudentNotFoundException, InvalidGradeException {
+        if (grade < 0 || grade > 10) {
+            throw new InvalidGradeException(studentName);
+        }
+
+        IStudent student = studentsList.get(studentName);
+        if (student == null) {
+            throw new StudentNotFoundException(studentName);
+        }
+
+        student.addGrade(grade);
+    }
+
+    @Override
+    public String getStudentDetails(String studentName) throws StudentNotFoundException, NoGradesException {
+        IStudent student = studentsList.get(studentName);
+        if (student == null) {
+            throw new StudentNotFoundException(studentName);
+        }
+
+        double average = student.calculateAverage(); // noGradesException here
+        return String.format("Student: %s | Grades: %s | Average: %.2f", student.getName(), student.getGrades().toString(), average);
+    }
+
+    @Override
+    public Map<String, Double> getHighPerformingStudents(double minGrades) {
+        return null;
+    }
 }
