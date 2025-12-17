@@ -47,6 +47,15 @@ public class StudentManager implements IStudentManager {
 
     @Override
     public Map<String, Double> getHighPerformingStudents(double minGrades) {
-        return null;
+
+        Map<String, Double> highP = new HashMap<>();;
+        for(String studentName : studentsList.keySet()) {
+            IStudent student = studentsList.get(studentName);
+            double avg = student.calculateAverage();
+            if(avg >= minGrades) {
+                highP.put(studentName, avg);
+            }
+        }
+        return highP;
     }
 }
