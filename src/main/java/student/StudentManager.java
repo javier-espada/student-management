@@ -42,7 +42,7 @@ public class StudentManager implements IStudentManager {
         }
 
         double average = student.calculateAverage(); // noGradesException here
-        return String.format("Student: %s | Grades: %s | Average: %.2f", student.getName(), student.getGrades(), average);
+        return String.format("Student: %s | Grades: %s | Average: %.2f", student.getName(), student.getGrades().toString(), average);
     }
 
     @Override
