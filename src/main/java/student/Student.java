@@ -1,5 +1,8 @@
 package student;
 
+import exception.InvalidGradeException;
+import exception.NoGradesException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,9 +33,9 @@ public class Student implements IStudent {
     }
 
     @Override
-    public double calculateAverage() {
+    public double calculateAverage() throws NoGradesException {
         if (grades==null || grades.isEmpty()){
-            // TODO: throws NoGradesException
+            throw new NoGradesException("No grades have been set for this student!");
         }
         double sum = 0;
         for (Double grade : grades) {
@@ -42,10 +45,9 @@ public class Student implements IStudent {
     }
 
     @Override
-    public boolean addGrade(double grade) {
+    public boolean addGrade(double grade) throws InvalidGradeException {
         if (grade < 0.0 || grade > 10.0) {
-            // TODO: throws InvalidGradeException
-            return false;
+            throw new InvalidGradeException("Grade out of range! Make sure grade is between 0.0 and 10.0");
         }
 
         grades.add(grade);
@@ -58,7 +60,11 @@ public class Student implements IStudent {
 
         sb.append("Student name: ").append(getName()).append("\n");
         sb.append("Grades: ").append(getGrades()).append("\n");
-        sb.append("Average Grade: ").append(calculateAverage()).append("\n");
+        try {
+            sb.append("Average Grade: ").append(calculateAverage()).append("\n");
+        } catch (NoGradesException e) {
+            sb.append("Average Grade: ").append(e.getMessage()).append("\n");
+        }
 
         return sb.toString();
     }
