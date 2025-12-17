@@ -30,9 +30,10 @@ public class TestStudent {
     public void testAverageGrades() {
         final String name1 = "Juan";
         Student student = new Student(name1);
-        student.addGrade(3.0);
-        student.addGrade(4.0);
-        assertEquals(3.5, student.calculateAverage());
+        assertDoesNotThrow(() -> student.addGrade(3.0));
+        assertDoesNotThrow(() -> student.addGrade(4.0));
+        Double avg = assertDoesNotThrow(student::calculateAverage);
+        assertEquals(3.5, avg);
     }
 
 
@@ -42,7 +43,7 @@ public class TestStudent {
         Student student = new Student(name1);
         List<Double> grades = student.getGrades();
         assertEquals(0, grades.size());
-        student.addGrade(3.0);
+        assertDoesNotThrow(() -> student.addGrade(3.0));
         grades = student.getGrades();
         assertEquals(1, grades.size());
         List<Double> grades2 = new ArrayList<>();
