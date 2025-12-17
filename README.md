@@ -257,8 +257,8 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
     - [x] Create IStudent interface.
     - [x] Create IStudentManager interface.
     - [x] Create Student class with attributes and constructor.
-    - [ ] Create StudentManager class with the students HashMap
-    - [ ] Implement addStudent, recordGrade, and calculateAverage methods.
+    - [x] Create StudentManager class with the students HashMap
+    - [x] Implement addStudent, recordGrade, and calculateAverage methods.
 - [x] Manage exceptions.
     - [x] Create the 4 custom exception classes.
 
