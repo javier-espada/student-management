@@ -3,6 +3,7 @@ package student;
 import exception.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StudentManager implements IStudentManager {
 
@@ -47,6 +48,15 @@ public class StudentManager implements IStudentManager {
 
     @Override
     public Map<String, Double> getHighPerformingStudents(double minGrades) {
-        return null;
+
+        Map<String, Double> highP = new HashMap<>();;
+        for(String studentName : studentsList.keySet()) {
+            IStudent student = studentsList.get(studentName);
+            double avg = student.calculateAverage();
+            if(avg >= minGrades) {
+                highP.put(studentName, avg);
+            }
+        }
+        return highP;
     }
 }
