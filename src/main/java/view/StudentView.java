@@ -122,6 +122,8 @@ public class StudentView {
             }
         } while(!done);
 
+        sc.nextLine();
+
         return option;
     }
 
@@ -137,6 +139,8 @@ public class StudentView {
                 System.out.println("For the grade you must enter a double.");
             }
         } while(!done);
+
+        sc.nextLine();
 
         return grade;
     }
