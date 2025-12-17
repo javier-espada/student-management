@@ -254,7 +254,8 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 - [ ] Documentation Updates
     - [ ] README.md Updates
 - [ ] Full Model Build.
-    - [ ] Create IStudent interface.
+    - [x] Create IStudent interface.
+    - [ ] Create IStudentManager interface.
     - [ ] Create Student class with attributes and constructor.
     - [ ] Create StudentManager class with the students HashMap
     - [ ] Implement addStudent, recordGrade, and calculateAverage methods.
