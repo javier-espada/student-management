@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestStudentManager {
     @Test
-    public void testAddStudent() throws NoGradesException {
+    public void testAddStudent() {
         final String name1 = "Juan";
         final String name2 = "Maria";
         StudentManager studentManager = new StudentManager();
