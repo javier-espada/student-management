@@ -63,4 +63,12 @@ public class StudentManager implements IStudentManager {
         }
         return highP;
     }
+
+    @Override
+    public IStudent getStudent(String name) throws StudentNotFoundException {
+        if (!studentsList.containsKey(name)) {
+            throw new StudentNotFoundException(name);
+        }
+        return studentsList.get(name);
+    }
 }
