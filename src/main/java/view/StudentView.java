@@ -26,7 +26,7 @@ public class StudentView {
         System.out.println("Welcome to the student management system.");
 
         while(true) {
-            System.out.println("Select what action do you want to realise:\n");
+            System.out.println("\nSelect what action do you want to realise:\n");
             System.out.println("1. Add a new student to the system.");
             System.out.println("2. View student's grades.");
             System.out.println("3. Add grade to a student.");
@@ -35,15 +35,17 @@ public class StudentView {
 
             option = readInt();
 
-            if(option < 1 || option > 7) {
-                handleMenuInput(option);
+            if(option > 0 && option < 6) {
+                if(!handleMenuInput(option)) {
+                    return;
+                }
             } else {
                 System.out.println("Please choose a valid action to perform.\n");
             }
         }
     }
 
-    void handleMenuInput  (int option) {
+    boolean handleMenuInput  (int option) {
         switch (option) {
             case(1): // Add student
                 System.out.println("Enter the student's name to register it:");
@@ -101,12 +103,15 @@ public class StudentView {
 
             case(5): // Exit
                 System.out.println("Exiting the student management system . . .");
-                return;
+                sc.close();
+                return (false);
 
             default: // Input error
                 System.out.println("Please, enter a valid input option (1-7).");
                 break;
         }
+
+        return true;
     }
 
     int readInt() {
@@ -119,6 +124,7 @@ public class StudentView {
                 done = true;
             } catch (InputMismatchException e) {
                 System.out.println("To choose an option you must enter an integer.");
+                sc.nextLine();
             }
         } while(!done);
 
@@ -137,6 +143,7 @@ public class StudentView {
                 done = true;
             } catch (InputMismatchException e) {
                 System.out.println("For the grade you must enter a double.");
+                sc.nextLine();
             }
         } while(!done);
 
