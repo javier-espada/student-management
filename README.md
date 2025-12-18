@@ -236,9 +236,23 @@ We will use the commit standard **Type(area): Brief description**.
 
 ### Top contributors:
 
-<a href="https://github.com/javier-espada/student-management/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=javier-espada/student-management" alt="contrib.rocks image" />
-</a>
+<div align="left">
+  <a href="https://github.com/javier-espada" style="text-decoration: none;">
+    <img src="https://github.com/javier-espada.png?size=100" width="65px" style="border-radius: 50%; margin-right: 10px;" alt="Javier Espada" />
+  </a>
+  <a href="https://github.com/CarlosQaracter" style="text-decoration: none;">
+    <img src="https://github.com/CarlosQaracter.png?size=100" width="65px" style="border-radius: 50%; margin-right: 10px;" alt="Carlos" />
+  </a>
+  <a href="https://github.com/guzmangriancho" style="text-decoration: none;">
+    <img src="https://github.com/guzmangriancho.png?size=100" width="65px" style="border-radius: 50%; margin-right: 10px;" alt="Guzmán" />
+  </a>
+  <a href="https://github.com/RecepBorekciQaracter" style="text-decoration: none;">
+    <img src="https://github.com/RecepBorekciQaracter.png?size=100" width="65px" style="border-radius: 50%; margin-right: 10px;" alt="Recep" />
+  </a>
+  <a href="https://github.com/Miguel901288" style="text-decoration: none;">
+    <img src="https://github.com/Miguel901288.png?size=100" width="65px" style="border-radius: 50%; margin-right: 10px;" alt="Miguel" />
+  </a>
+</div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
