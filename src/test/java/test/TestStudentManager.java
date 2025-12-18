@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import student.Student;
 import student.StudentManager;
 
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestStudentManager {
@@ -41,4 +43,37 @@ public class TestStudentManager {
         assertDoesNotThrow(()->studentManager.recordGrade(name1, 3.0));
         assertDoesNotThrow(()->studentManager.getStudentDetails(name1));
     }
-}
+
+    @Test
+    public void testGetHighPerformingStudents(){
+        final String name1 = "Juan";
+        final String name2 = "María";
+        final String name3 = "Paco";
+        StudentManager studentManager = new StudentManager();
+        Student student1 = new Student(name1);
+        Student student2 = new Student(name1);
+        Student student3 = new Student(name1);
+        assertDoesNotThrow(() -> {
+            studentManager.addStudent(name1);
+            studentManager.addStudent(name2);
+            studentManager.addStudent(name3);
+
+            studentManager.recordGrade(name1, 5.0);
+            studentManager.recordGrade(name1, 10.0);
+            studentManager.recordGrade(name1, 8.0);
+
+            studentManager.recordGrade(name2, 5.0);
+            studentManager.recordGrade(name2, 4.5);
+            studentManager.recordGrade(name2, 7.0);
+
+            studentManager.recordGrade(name3, 6.5);
+            studentManager.recordGrade(name3, 9.7);
+            studentManager.recordGrade(name3, 8.0);
+
+            Map<String, Double> map = studentManager.getHighPerformingStudents(7.0);
+            assertTrue(map.containsKey(name1));
+            assertFalse(map.containsKey(name2));
+            assertTrue(map.containsKey(name3));
+        });
+
+    }
