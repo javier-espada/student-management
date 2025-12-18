@@ -50,7 +50,9 @@ public class Student implements IStudent {
             throw new InvalidGradeException("Grade out of range! Make sure grade is between 0.0 and 10.0");
         }
 
-        grades.add(grade);
+        double roundedGrade = (double) Math.round(grade * 100) / 100;
+
+        grades.add(roundedGrade);
         return true;
     }
 
@@ -61,7 +63,8 @@ public class Student implements IStudent {
         sb.append("Student name: ").append(getName()).append("\n");
         sb.append("Grades: ").append(getGrades()).append("\n");
         try {
-            sb.append("Average Grade: ").append(calculateAverage()).append("\n");
+            double averageGrade = Math.round(calculateAverage()*100)/100.0;
+            sb.append("Average Grade: ").append(averageGrade).append("\n");
         } catch (NoGradesException e) {
             sb.append("Average Grade: ").append(e.getMessage()).append("\n");
         }
