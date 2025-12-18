@@ -41,7 +41,10 @@ public class Student implements IStudent {
         for (Double grade : grades) {
             sum += grade;
         }
-        return sum/grades.size();
+
+        double average = sum / grades.size();
+        double roundedAverage = Math.round(average*100)/100.0;
+        return roundedAverage;
     }
 
     @Override
@@ -50,7 +53,9 @@ public class Student implements IStudent {
             throw new InvalidGradeException("Grade out of range! Make sure grade is between 0.0 and 10.0");
         }
 
-        grades.add(grade);
+        double roundedGrade = (double) Math.round(grade * 100) / 100;
+
+        grades.add(roundedGrade);
         return true;
     }
 
