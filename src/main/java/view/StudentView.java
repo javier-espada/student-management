@@ -4,7 +4,7 @@ import exception.DuplicateStudentException;
 import exception.InvalidGradeException;
 import exception.NoGradesException;
 import exception.StudentNotFoundException;
-import student.StudentManager;
+import student.IStudentManager;
 
 import java.util.InputMismatchException;
 import java.util.Map;
@@ -13,9 +13,9 @@ import java.util.Scanner;
 public class StudentView {
 
     Scanner sc;
-    StudentManager sm;
+    IStudentManager sm;
 
-    public StudentView(StudentManager sm) {
+    public StudentView(IStudentManager sm) {
         sc = new Scanner(System.in);
         this.sm = sm;
     }
