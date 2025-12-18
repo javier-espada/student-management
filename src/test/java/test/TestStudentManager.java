@@ -27,7 +27,7 @@ public class TestStudentManager {
         assertDoesNotThrow(()->studentManager.addStudent(name1));
         assertThrows(NoGradesException.class, ()->studentManager.getStudentDetails(name1));
         assertDoesNotThrow(()->studentManager.recordGrade(name1, 3.0));
-        System.out.println(assertDoesNotThrow(()->studentManager.getStudentDetails(name1)));
+        assertDoesNotThrow(()->studentManager.getStudentDetails(name1));
     }
 
     @Test
@@ -39,6 +39,6 @@ public class TestStudentManager {
         assertThrows(StudentNotFoundException.class, ()->studentManager.getStudentDetails("Paco"));
         assertThrows(NoGradesException.class, ()->studentManager.getStudentDetails(name1));
         assertDoesNotThrow(()->studentManager.recordGrade(name1, 3.0));
-        System.out.println(assertDoesNotThrow(()->studentManager.getStudentDetails(name1)));
+        assertDoesNotThrow(()->studentManager.getStudentDetails(name1));
     }
 }
