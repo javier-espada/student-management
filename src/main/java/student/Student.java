@@ -41,7 +41,10 @@ public class Student implements IStudent {
         for (Double grade : grades) {
             sum += grade;
         }
-        return sum/grades.size();
+
+        double average = sum / grades.size();
+
+        return Math.round(average*100)/100.0;
     }
 
     @Override
@@ -63,8 +66,7 @@ public class Student implements IStudent {
         sb.append("Student name: ").append(getName()).append("\n");
         sb.append("Grades: ").append(getGrades()).append("\n");
         try {
-            double averageGrade = Math.round(calculateAverage()*100)/100.0;
-            sb.append("Average Grade: ").append(averageGrade).append("\n");
+            sb.append("Average Grade: ").append(calculateAverage()).append("\n");
         } catch (NoGradesException e) {
             sb.append("Average Grade: ").append(e.getMessage()).append("\n");
         }
