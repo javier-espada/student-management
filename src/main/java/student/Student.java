@@ -43,8 +43,8 @@ public class Student implements IStudent {
         }
 
         double average = sum / grades.size();
-
-        return Math.round(average*100)/100.0;
+        double roundedAverage = Math.round(average*100)/100.0;
+        return roundedAverage;
     }
 
     @Override
