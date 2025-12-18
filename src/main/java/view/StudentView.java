@@ -35,7 +35,7 @@ public class StudentView {
 
             option = readInt();
 
-            if(option > 0 && option < 8) {
+            if(option > 0 && option < 6) {
                 if(!handleMenuInput(option)) {
                     return;
                 }
@@ -103,6 +103,7 @@ public class StudentView {
 
             case(5): // Exit
                 System.out.println("Exiting the student management system . . .");
+                sc.close();
                 return (false);
 
             default: // Input error
