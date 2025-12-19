@@ -7,9 +7,12 @@ import java.util.Map;
 public class StudentManager implements IStudentManager {
 
     private final Map<String, IStudent> studentsList;
+    private final StudentRepository repository;
 
     public StudentManager() {
-        this.studentsList = new HashMap<>();
+        this.repository = new StudentRepository();
+        Map<String, IStudent> loadedData = repository.load();
+        this.studentsList = (loadedData != null) ? loadedData : new HashMap<>();
     }
 
     @Override
@@ -18,6 +21,7 @@ public class StudentManager implements IStudentManager {
             throw new DuplicateStudentException(name);
         }
         studentsList.put(name, new Student(name));
+        repository.save(studentsList);
     }
 
     @Override
@@ -32,6 +36,7 @@ public class StudentManager implements IStudentManager {
         }
 
         student.addGrade(grade);
+        repository.save(studentsList);
     }
 
     @Override
