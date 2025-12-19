@@ -23,7 +23,7 @@ target/
 .sts4-cache
 
 ### Data ###
-/data/
+data/
 
 ### NetBeans ###
 /nbproject/private/
