@@ -26,6 +26,14 @@ public class TestStudent {
         assertEquals(name2, student.getName());
     }
 
+    public void testStudentConstructorExceptions(){
+        assertDoesNotThrow(InvalidStudentNameException.class, () -> new Student("Juan"));
+        assertThrows(InvalidStudentNameException, () -> new Student("Ju4n"),
+                "Exception is not thrown for numbers");
+        assertDoesNotThrow(InvalidStudentNameException.class, () -> new Student("Jüana María Eñe"),
+                "Exception is thrown for special letters like tildes or Ñ");
+    }
+
     @Test
     public void testAverageGrades() {
         final String name1 = "Juan";

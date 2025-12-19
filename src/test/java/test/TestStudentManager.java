@@ -15,8 +15,10 @@ public class TestStudentManager {
     @Test
     public void testAddStudent() {
         final String name1 = "Juan";
-        final String name2 = "Maria";
+        final String name2 = "Jüana María Eñe";
+        final String name3 = "Ju4n";
         StudentManager studentManager = new StudentManager();
+        assertThrows(InvalidStudentNameException, studentManager.addStudent(name3));
         assertDoesNotThrow(() -> studentManager.addStudent(name1));
         assertDoesNotThrow(() -> studentManager.addStudent(name2));
         assertThrows(DuplicateStudentException.class, () -> studentManager.addStudent(name1));
