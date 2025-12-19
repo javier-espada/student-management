@@ -48,7 +48,7 @@ public class Student implements IStudent {
     }
 
     @Override
-    public boolean addGrade(double grade) throws InvalidGradeException {
+    public void addGrade(double grade) throws InvalidGradeException {
         if (grade < 0.0 || grade > 10.0) {
             throw new InvalidGradeException("Grade out of range! Make sure grade is between 0.0 and 10.0");
         }
@@ -56,7 +56,6 @@ public class Student implements IStudent {
         double roundedGrade = (double) Math.round(grade * 100) / 100;
 
         grades.add(roundedGrade);
-        return true;
     }
 
     @Override

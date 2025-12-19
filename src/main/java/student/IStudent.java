@@ -9,6 +9,6 @@ public interface IStudent {
     List<Double> getGrades();
 
     double calculateAverage() throws NoGradesException;
-    boolean addGrade(double grade) throws InvalidGradeException;
+    void addGrade(double grade) throws InvalidGradeException;
 
 }
