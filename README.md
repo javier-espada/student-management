@@ -193,7 +193,7 @@ src/
 | :--- | :--- | :--- | :--- |
 | **<a href="https://github.com/Miguel901288">Miguel</a>** | Group Leader / Developer | `Main.java` (MVC Config). `StudentView.run()`. PR Reviewer. Basic JUnit Tests. | **Structure/Integration and QA.** |
 | **<a href="https://github.com/CarlosQaracter">Carlos</a>** | Developer | `StudentView` (Implementation of CRUD handlers, `try-catch` handling for all exceptions). Exception JUnit Tests. | **Interface and Robustness.** |
-| **<a href="https://github.com/Davidsar11">David</a>** | Developer | `getHighPerformingStudents` (in `StudentManager`). Handler for this query in `StudentView`. Functional JUnit Tests. | **Advanced Query Logic and QA.** |
+| **<a href="https://github.com/Davidsar11">David</a>** | Developer | `getHighPerformingStudents` (in `StudentManager`). Handler for this query in `StudentView`. | **Advanced Query Logic and QA.** |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -275,8 +275,8 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
 
 ## 6. Roadmap
 ### Day 1
-- [ ] Documentation Updates
-    - [ ] README.md Updates
+- [x] Documentation Updates
+    - [x] README.md Updates
 - [x] Full Model Build.
     - [x] Create IStudent interface.
     - [x] Create IStudentManager interface.
@@ -293,14 +293,14 @@ Project Link: [https://github.com/javier-espada/student-management](https://gith
     - [x] Create StudentView class with the menu and Scanner to read data.
 - [x] Main creation
     - [x] Create Main class to start the program using try-catch blocks to handle expected exceptions.
-- [ ] Testing.
-    - [ ] Create and execute basic JUnit tests.
+- [x] Testing.
+    - [x] Create and execute basic JUnit tests.
 - [x] Final integration
     - [x] Perform a final integration session to connect Group 1's StudentManager with Group 2's StudentView and verify that the entire data flow works correctly.
 
 ### Future Implementations
 - [ ] Use Jacoco to check coverage.
-- [ ] Implement local database with a simple text/json file.
+- [x] Implement local database with a simple text/json file.
 
 See the [open issues](https://github.com/javier-espada/student-management/issues) for a full list of proposed features (and known issues).
 
