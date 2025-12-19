@@ -4,15 +4,31 @@ import exception.DuplicateStudentException;
 import exception.NoGradesException;
 import exception.StudentNotFoundException;
 import exception.InvalidStudentNameException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import student.Student;
 import student.StudentManager;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TestStudentManager {
+    private StudentManager studentManager;
+    private static final String FILE_PATH = "data/students.json";
+
+    @BeforeEach
+    public void setUp() {
+        try {
+            Files.deleteIfExists(Paths.get(FILE_PATH));
+        } catch (Exception e) {
+            System.err.println("No se pudo borrar el archivo de pruebas: " + e.getMessage());
+        }
+        studentManager = new StudentManager();
+    }
+
     @Test
     public void testAddStudent() {
         final String name1 = "Juan";
