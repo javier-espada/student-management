@@ -17,35 +17,35 @@ public class TestStudentManager {
         final String name1 = "Juan";
         final String name2 = "Maria";
         StudentManager studentManager = new StudentManager();
-        assertDoesNotThrow(()->studentManager.addStudent(name1));
-        assertDoesNotThrow(()->studentManager.addStudent(name2));
-        assertThrows(DuplicateStudentException.class, ()->studentManager.addStudent(name1));
+        assertDoesNotThrow(() -> studentManager.addStudent(name1));
+        assertDoesNotThrow(() -> studentManager.addStudent(name2));
+        assertThrows(DuplicateStudentException.class, () -> studentManager.addStudent(name1));
     }
 
     @Test
     public void testRecordGrade() {
         final String name1 = "Juan";
         StudentManager studentManager = new StudentManager();
-        assertDoesNotThrow(()->studentManager.addStudent(name1));
-        assertThrows(NoGradesException.class, ()->studentManager.getStudentDetails(name1));
-        assertDoesNotThrow(()->studentManager.recordGrade(name1, 3.0));
-        assertDoesNotThrow(()->studentManager.getStudentDetails(name1));
+        assertDoesNotThrow(() -> studentManager.addStudent(name1));
+        assertThrows(NoGradesException.class, () -> studentManager.getStudentDetails(name1));
+        assertDoesNotThrow(() -> studentManager.recordGrade(name1, 3.0));
+        assertDoesNotThrow(() -> studentManager.getStudentDetails(name1));
     }
 
     @Test
     public void testGetStudentDetails() {
         final String name1 = "Juan";
         StudentManager studentManager = new StudentManager();
-        assertThrows(StudentNotFoundException.class, ()->studentManager.getStudentDetails(name1));
-        assertDoesNotThrow(()->studentManager.addStudent(name1));
-        assertThrows(StudentNotFoundException.class, ()->studentManager.getStudentDetails("Paco"));
-        assertThrows(NoGradesException.class, ()->studentManager.getStudentDetails(name1));
-        assertDoesNotThrow(()->studentManager.recordGrade(name1, 3.0));
-        assertDoesNotThrow(()->studentManager.getStudentDetails(name1));
+        assertThrows(StudentNotFoundException.class, () -> studentManager.getStudentDetails(name1));
+        assertDoesNotThrow(() -> studentManager.addStudent(name1));
+        assertThrows(StudentNotFoundException.class, () -> studentManager.getStudentDetails("Paco"));
+        assertThrows(NoGradesException.class, () -> studentManager.getStudentDetails(name1));
+        assertDoesNotThrow(() -> studentManager.recordGrade(name1, 3.0));
+        assertDoesNotThrow(() -> studentManager.getStudentDetails(name1));
     }
 
     @Test
-    public void testGetHighPerformingStudents(){
+    public void testGetHighPerformingStudents() {
         final String name1 = "Juan";
         final String name2 = "María";
         final String name3 = "Paco";
@@ -75,5 +75,5 @@ public class TestStudentManager {
             assertFalse(map.containsKey(name2));
             assertTrue(map.containsKey(name3));
         });
-
     }
+}
