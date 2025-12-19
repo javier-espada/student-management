@@ -25,7 +25,7 @@ public class StudentRepository {
             Map<String, IStudent> map = new HashMap<>();
             if (studentArray != null) {
                 for (Student s : studentArray) {
-                    map.put(s.getName(), s);
+                    map.put(s.getName().toUpperCase(), s);
                 }
             }
             return map;
