@@ -7,17 +7,22 @@ import java.util.Map;
 public class StudentManager implements IStudentManager {
 
     private final Map<String, IStudent> studentsList;
+    private final StudentRepository repository;
 
     public StudentManager() {
-        this.studentsList = new HashMap<>();
+        this.repository = new StudentRepository();
+        Map<String, IStudent> loadedData = repository.load();
+        this.studentsList = (loadedData != null) ? loadedData : new HashMap<>();
     }
 
     @Override
     public void addStudent(String name) throws DuplicateStudentException {
-        if (studentsList.containsKey(name)) {
+        String key = name.toUpperCase();
+        if (studentsList.containsKey(key)) {
             throw new DuplicateStudentException(name);
         }
-        studentsList.put(name, new Student(name));
+        studentsList.put(key, new Student(name));
+        repository.save(studentsList);
     }
 
     @Override
@@ -26,17 +31,18 @@ public class StudentManager implements IStudentManager {
             throw new InvalidGradeException(studentName);
         }
 
-        IStudent student = studentsList.get(studentName);
+        IStudent student = studentsList.get(studentName.toUpperCase());
         if (student == null) {
             throw new StudentNotFoundException(studentName);
         }
 
         student.addGrade(grade);
+        repository.save(studentsList);
     }
 
     @Override
     public String getStudentDetails(String studentName) throws StudentNotFoundException, NoGradesException {
-        IStudent student = studentsList.get(studentName);
+        IStudent student = studentsList.get(studentName.toUpperCase());
         if (student == null) {
             throw new StudentNotFoundException(studentName);
         }
