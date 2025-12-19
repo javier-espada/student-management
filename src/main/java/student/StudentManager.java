@@ -16,7 +16,7 @@ public class StudentManager implements IStudentManager {
     }
 
     @Override
-    public void addStudent(String name) throws DuplicateStudentException {
+    public void addStudent(String name) throws DuplicateStudentException, InvalidStudentNameException {
         String key = name.toUpperCase();
         if (studentsList.containsKey(key)) {
             throw new DuplicateStudentException(name);
