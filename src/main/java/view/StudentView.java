@@ -1,9 +1,6 @@
 package view;
 
-import exception.DuplicateStudentException;
-import exception.InvalidGradeException;
-import exception.NoGradesException;
-import exception.StudentNotFoundException;
+import exception.*;
 import student.IStudentManager;
 
 import java.util.InputMismatchException;
@@ -53,11 +50,13 @@ public class StudentView {
 
                 try {
                     sm.addStudent(name);
+                    System.out.println("Student " + name + " added to the system.");
                 } catch (DuplicateStudentException e) {
                     System.out.println("You are trying to register the student with name: " + name + ", which is already registered in the system.");
+                } catch (InvalidStudentNameException e) {
+                    System.out.println("Invalid name entered, a student name cant be empty or contain numbers.");
                 }
 
-                System.out.println("Student " + name + " added to the system.");
                 break;
 
             case(2): // View student grades

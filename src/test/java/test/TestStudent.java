@@ -2,6 +2,7 @@ package test;
 
 import exception.InvalidGradeException;
 import exception.NoGradesException;
+import exception.InvalidStudentNameException;
 import org.junit.jupiter.api.Test;
 import student.Student;
 
@@ -18,7 +19,7 @@ public class TestStudent {
     public void testStudentConstructor() {
         final String name1 = "Juan";
         final String name2 = "Maria";
-        Student student = new Student(name1);
+        Student student = assertDoesNotThrow(() -> new Student(name1));
         assertNotNull(student);
         assertEquals(name1, student.getName());
         assertNotEquals(name2, student.getName());
@@ -26,18 +27,20 @@ public class TestStudent {
         assertEquals(name2, student.getName());
     }
 
+    @Test
     public void testStudentConstructorExceptions(){
-        assertDoesNotThrow(InvalidStudentNameException.class, () -> new Student("Juan"));
-        assertThrows(InvalidStudentNameException, () -> new Student("Ju4n"),
+        assertDoesNotThrow(() -> new Student("Juan"));
+        assertThrows(InvalidStudentNameException.class, () -> new Student("Ju4n"),
                 "Exception is not thrown for numbers");
-        assertDoesNotThrow(InvalidStudentNameException.class, () -> new Student("Jüana María Eñe"),
+        assertDoesNotThrow(() -> new Student("Jüana María Eñe"),
                 "Exception is thrown for special letters like tildes or Ñ");
     }
 
     @Test
     public void testAverageGrades() {
         final String name1 = "Juan";
-        Student student = new Student(name1);
+        Student student = assertDoesNotThrow(() -> new Student(name1));
+        assertNotNull(student);
         assertDoesNotThrow(() -> student.addGrade(3.0));
         assertDoesNotThrow(() -> student.addGrade(4.0));
         Double avg = assertDoesNotThrow(student::calculateAverage);
@@ -48,7 +51,8 @@ public class TestStudent {
     @Test
     public void testGetGrades() {
         final String name1 = "Juan";
-        Student student = new Student(name1);
+        Student student = assertDoesNotThrow(() -> new Student(name1));
+        assertNotNull(student);
         List<Double> grades = student.getGrades();
         assertEquals(0, grades.size());
         assertDoesNotThrow(() -> student.addGrade(3.0));
@@ -63,7 +67,8 @@ public class TestStudent {
     @Test
     public void testStudentGradeExceptions() {
         final String name1 = "Juan";
-        Student student = new Student(name1);
+        Student student = assertDoesNotThrow(() -> new Student(name1));
+        assertNotNull(student);
         assertThrows(NoGradesException.class, student::calculateAverage);
         assertDoesNotThrow(() -> {
             student.addGrade(10.0);
