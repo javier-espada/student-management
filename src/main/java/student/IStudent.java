@@ -11,4 +11,5 @@ public interface IStudent {
     double calculateAverage() throws NoGradesException;
     void addGrade(double grade) throws InvalidGradeException;
 
+    String printStudent() throws NoGradesException;
 }
