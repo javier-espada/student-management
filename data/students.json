@@ -1,1 +1,26 @@
-{"RECEP":{"name":"Recep","grades":[7.0]},"JAVIER":{"name":"Javier","grades":[9.0]},"MIGUEL":{"name":"Miguel","grades":[]},"CARLOS":{"name":"Carlos","grades":[]},"GUZMAN":{"name":"Guzman","grades":[6.0]}}
+[
+  {
+    "name": "Guzman",
+    "grades": [
+      7.0
+    ]
+  },
+  {
+    "name": "Carlos",
+    "grades": [
+      5.0
+    ]
+  },
+  {
+    "name": "Javier",
+    "grades": [
+      9.0
+    ]
+  },
+  {
+    "name": "Miguel",
+    "grades": [
+      8.0
+    ]
+  }
+]
