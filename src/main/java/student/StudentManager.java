@@ -17,10 +17,11 @@ public class StudentManager implements IStudentManager {
 
     @Override
     public void addStudent(String name) throws DuplicateStudentException {
-        if (studentsList.containsKey(name)) {
+        String key = name.toUpperCase();
+        if (studentsList.containsKey(key)) {
             throw new DuplicateStudentException(name);
         }
-        studentsList.put(name, new Student(name));
+        studentsList.put(key, new Student(name));
         repository.save(studentsList);
     }
 
@@ -30,7 +31,7 @@ public class StudentManager implements IStudentManager {
             throw new InvalidGradeException(studentName);
         }
 
-        IStudent student = studentsList.get(studentName);
+        IStudent student = studentsList.get(studentName.toUpperCase());
         if (student == null) {
             throw new StudentNotFoundException(studentName);
         }
@@ -41,7 +42,7 @@ public class StudentManager implements IStudentManager {
 
     @Override
     public String getStudentDetails(String studentName) throws StudentNotFoundException, NoGradesException {
-        IStudent student = studentsList.get(studentName);
+        IStudent student = studentsList.get(studentName.toUpperCase());
         if (student == null) {
             throw new StudentNotFoundException(studentName);
         }
