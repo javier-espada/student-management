@@ -63,16 +63,12 @@ public class Student implements IStudent {
     }
 
     @Override
-    public String toString() {
+    public String printStudent() throws NoGradesException {
         StringBuilder sb = new StringBuilder();
 
         sb.append("Student name: ").append(getName()).append("\n");
         sb.append("Grades: ").append(getGrades()).append("\n");
-        try {
-            sb.append("Average Grade: ").append(calculateAverage()).append("\n");
-        } catch (NoGradesException e) {
-            sb.append("Average Grade: ").append(e.getMessage()).append("\n");
-        }
+        sb.append("Average Grade: ").append(calculateAverage()).append("\n");
 
         return sb.toString();
     }

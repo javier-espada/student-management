@@ -47,8 +47,7 @@ public class StudentManager implements IStudentManager {
             throw new StudentNotFoundException(studentName);
         }
 
-        double average = student.calculateAverage(); // noGradesException here
-        return String.format("Student: %s | Grades: %s | Average: %.2f", student.getName(), student.getGrades().toString(), average);
+        return student.printStudent(); // noGradesException here
     }
 
     @Override
