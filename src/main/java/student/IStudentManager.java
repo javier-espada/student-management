@@ -13,4 +13,6 @@ public interface IStudentManager {
     String getStudentDetails(String studentName) throws StudentNotFoundException, NoGradesException;
 
     Map<String, Double> getHighPerformingStudents(double minGrade);
+
+    IStudent getStudent(String name) throws StudentNotFoundException;
 }
