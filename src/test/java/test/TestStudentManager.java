@@ -3,6 +3,7 @@ package test;
 import exception.DuplicateStudentException;
 import exception.NoGradesException;
 import exception.StudentNotFoundException;
+import exception.InvalidStudentNameException;
 import org.junit.jupiter.api.Test;
 import student.Student;
 import student.StudentManager;
@@ -18,7 +19,7 @@ public class TestStudentManager {
         final String name2 = "Jüana María Eñe";
         final String name3 = "Ju4n";
         StudentManager studentManager = new StudentManager();
-        assertThrows(InvalidStudentNameException, studentManager.addStudent(name3));
+        assertThrows(InvalidStudentNameException.class, () -> studentManager.addStudent(name3));
         assertDoesNotThrow(() -> studentManager.addStudent(name1));
         assertDoesNotThrow(() -> studentManager.addStudent(name2));
         assertThrows(DuplicateStudentException.class, () -> studentManager.addStudent(name1));
@@ -52,9 +53,6 @@ public class TestStudentManager {
         final String name2 = "María";
         final String name3 = "Paco";
         StudentManager studentManager = new StudentManager();
-        Student student1 = new Student(name1);
-        Student student2 = new Student(name1);
-        Student student3 = new Student(name1);
         assertDoesNotThrow(() -> {
             studentManager.addStudent(name1);
             studentManager.addStudent(name2);
@@ -73,9 +71,9 @@ public class TestStudentManager {
             studentManager.recordGrade(name3, 8.0);
 
             Map<String, Double> map = studentManager.getHighPerformingStudents(7.0);
-            assertTrue(map.containsKey(name1));
-            assertFalse(map.containsKey(name2));
-            assertTrue(map.containsKey(name3));
+            assertTrue(map.containsKey(name1.toUpperCase()));
+            assertFalse(map.containsKey(name2.toUpperCase()));
+            assertTrue(map.containsKey(name3.toUpperCase()));
         });
     }
 }
