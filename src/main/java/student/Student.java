@@ -1,6 +1,7 @@
 package student;
 
 import exception.InvalidGradeException;
+import exception.InvalidStudentNameException;
 import exception.NoGradesException;
 
 import java.util.ArrayList;
@@ -10,7 +11,10 @@ public class Student implements IStudent {
     private String name;
     private List<Double> grades;
 
-    public Student(String name) {
+    public Student(String name) throws InvalidStudentNameException {
+        if(name.isEmpty() || name.chars().anyMatch(Character::isDigit)) {
+            throw new InvalidStudentNameException();
+        }
         this.name = name;
         this.grades = new ArrayList<>();
     }
